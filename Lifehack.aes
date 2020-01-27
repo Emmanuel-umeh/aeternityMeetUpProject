@@ -1,0 +1,70 @@
+contract LifeHack =
+  
+    
+  record hackUser = 
+    {
+    creatorAddress : address,
+    imageUrl : string,
+    name : string,
+    tutorial : string,
+    like : bool,
+    likeCount : int
+    }
+    
+  record state = {
+    hack : map(int, hackUser),
+    hackLength : int,
+    likeCount : int}
+    
+  entrypoint init() = { 
+    hack = {},
+    hackLength = 0,
+    likeCount = 0}
+
+  
+  entrypoint getHack(index : int) = 
+    switch(Map.lookup(index, state.hack))
+      None => abort("Product does not exist with this index")
+      Some(x) => x  
+    
+    
+    //create a life hack
+    
+  stateful entrypoint writeHack( imageUrl' : string, name' : string, tutorial' : string) = 
+    let hackUser = {
+      creatorAddress  = Call.caller,
+      imageUrl = imageUrl',
+      name = name', 
+      tutorial = tutorial',
+      like = false,
+      likeCount = state.likeCount
+      
+      }
+    let index = getHackLength() + 1
+    put(state{hack[index] = hackUser, hackLength = index})
+    
+    
+    //returns lenght of life hacks registered
+  entrypoint getHackLength() : int = 
+    state.hackLength
+    
+  //returns number of likes
+    
+  entrypoint getlikeCount(index : int) = 
+    state.likeCount 
+    
+    //like a lifehack
+    
+  stateful entrypoint likeLifeHack(index : int) = 
+    let product = getHack(index)
+    let addlike = getlikeCount(index : int) + 1
+    //let hackUser = {
+      //creatorAddress  = product.creatorAddress,
+      //imageUrl = product.imageUrl,
+      //name = product.name, 
+      //tutorial = product.tutorial,
+      //like = product.like,
+      //likeCount = product.likeCount+1}
+    put(state{likeCount = addlike})  
+    "LIfe Hack has BEEN LIKED SUCCESSFULLY"
+  

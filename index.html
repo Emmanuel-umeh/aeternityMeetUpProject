@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="assets/css/loader.css">
+    <link rel="stylesheet" href="assets/css/scrollbar.css">
+    <link rel="stylesheet" href="assets/css/mustache.css">
+    <link rel="stylesheet" href="assets/css/like.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="index.html">Aeternity</a><button class="navbar-toggler"
+                data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="about.html">About us</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="contact.html">Contact us</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="scrollbar">
+        <header class="masthead" style="background-image:url('assets/img/home-bg.jpg');">
+            <div class="overlay"></div>
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-10 col-lg-8 mx-auto">
+                        <div class="site-heading">
+                            <h1>Life Hacks</h1><span class="subheading">Get Your Life Hacked</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="row register-form">
+            <div class="col-md-8 offset-md-2">
+                <form class="custom-form">
+                    <h1>Register LifeHack</h1>
+                    <div id="loadings"><img src="assets\img\loading.svg">
+                        <div><b>LOADING</b></div>
+                    </div>
+                    <div class="form-row form-group">
+                        <div class="col-sm-4 label-column"><label class="col-form-label" for="name-input-field">Title of
+                                LifeHack</label>
+                        </div>
+                        <div class="col-sm-6 input-column"><input class="form-control" type="text" id="name"></div>
+                    </div>
+                    <div class="form-row form-group">
+                        <div class="col-sm-4 label-column"><label class="col-form-label" for="email-input-field">Image
+                                Url</label></div>
+                        <div class="col-sm-6 input-column"><input class="form-control" type="url" id="imageUrl"></div>
+                    </div>
+                    <div class="form-row form-group">
+                        <div class="col-sm-4 label-column"><label class="col-form-label"
+                                for="text-input-field">LifeHack</label></div>
+                        <div class="col-sm-6 input-column"><textarea class="form-control" id="lifeHack"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-row form-group">
+                        <div class="col-sm-4 label-column"><label class="col-form-label"
+                                for="text-input-field">Username</label></div>
+                        <div class="col-sm-6 input-column"><input class="form-control" type="text" id="title"></div>
+                    </div>
+                    <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-2"><label
+                            class="form-check-label" for="formCheck-2">I've read and accept the terms and
+                            conditions</label>
+                    </div><button class="btn btn-light submit-button" id="regButton" type="button">Submit Form</button>
+                </form>
+            </div>
+        </div>
+        <div class="container" id="body">
+
+
+
+        </div>
+        <div class="like-container">
+            <div class="like-cnt unchecked" id="like-cnt">
+                <i class="like-btn material-icons">thumb_up</i>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-lg-8 mx-auto">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item"><span class="fa-stack fa-lg"><i
+                                        class="fa fa-circle fa-stack-2x"></i><i
+                                        class="fa fa-twitter fa-stack-1x fa-inverse"></i></span>
+                            </li>
+                            <li class="list-inline-item"><span class="fa-stack fa-lg"><i
+                                        class="fa fa-circle fa-stack-2x"></i><i
+                                        class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></li>
+                            <li class="list-inline-item"><span class="fa-stack fa-lg"><i
+                                        class="fa fa-circle fa-stack-2x"></i><i
+                                        class="fa fa-github fa-stack-1x fa-inverse"></i></span></li>
+                        </ul>
+                        <p class="text-muted copyright">Copyright&nbsp;©&nbsp;Dacade 2019</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </footer>
+
+    <script id="template" type="x-tmpl-mustache">
+        {{#HackArray}}
+        <div class="row">
+                    <div>
+                      <div class="card">
+                          <div class = "header"><h2>{{name}}</h2></div>
+                        
+                        <h5>October, 2019</h5>
+                        <!-- <img src="{{imageUrl}}" height =100, width=100> -->
+                        <div><img src="{{imageUrl}}" height =300, width=350></a></div>
+                        <p>{{tutorial}}<p>
+
+                            <!-- <p>Number of Likes : {{numberOfLikes}}</p> -->
+                        
+                                <!-- LikeBtn.com BEGIN -->
+                                <div class="like-content">
+                                        <button class="btn-secondary like-review">
+                                                <i class="fa fa-heart" aria-hidden="true"></i> Like
+                                              </button>
+                                </div>
+                               
+                                <!-- LikeBtn.com END -->
+                      </div>
+                      
+                    </div>
+                    
+                    {{/HackArray}}
+
+    </script>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/clean-blog.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.js"></script>
+    <script src="https://unpkg.com/@aeternity/aepp-sdk/dist/aepp-sdk.browser-script.js"></script>
+
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/loader.js"></script>
+
+
+    <!-- <script src="assets/js/like.js"></script> -->
+
+</body>
+
+
+
+
+</html>
